@@ -22,4 +22,11 @@ RSpec.describe StaticPagesController do
       expect(response).to render_template("about")
     end
   end
+
+  describe "GET contact" do
+    it "renders the contact template" do
+      get :contact
+      expect(response).to render_template("contact")
+    end
+  end
 end
