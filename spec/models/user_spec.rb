@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe User do
-  let!(:user) { User.create(name: "Jonathan Devers", email: "jonathan.devers@gmail.com", password: "annaishot", password_confirmation: "annaishot")}
+  # let!(:user) { User.create(name: "Jonathan Devers", email: "jonathan.devers@gmail.com", password: "annaishot", password_confirmation: "annaishot")}
 
   it 'has a valid factory' do
     expect(FactoryGirl.create(:user)).to be_valid
