@@ -11,8 +11,22 @@
       <ul class="right">
         <li><%= link_to "Home",   root_path %></li>
         <li><%= link_to "Help",   help_path %></li>
-        <li><%= link_to "Log in", '#' %></li>
+      <% if logged_in? %>
+        <li><%= link_to "Users", "#" %></li>
+        <li class="has-dropdown">
+        <%= link_to "Account", "#" %>
+        <ul class="dropdown">
+          <li><%= link_to "Profile", current_user %></li>
+          <li><%= link_to "Settings", '#' %></li>
+          <li class="divider"></li>
+          <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+        </ul>
+      </li>
       </ul>
+      <% else %>
+        <li><%= link_to "Log in", login_path %></li>
+      <% end %>
+
     </section>
   </nav>
 </div>
